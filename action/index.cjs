@@ -167093,11 +167093,13 @@ try {
 const { Headers, Request, Response } = __nccwpck_require__(44429);
 const fetch = (__nccwpck_require__(44429)["default"]);
 
-if (!globalThis.fetch) {
-  globalThis.fetch = fetch;
-  globalThis.Headers = Headers;
-  globalThis.Request = Request;
-  globalThis.Response = Response;
+const global = /** @type {any} */ (globalThis);
+
+if (!global.fetch) {
+  global.fetch = fetch;
+  global.Headers = Headers;
+  global.Request = Request;
+  global.Response = Response;
 }
 
 
@@ -170093,11 +170095,11 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 __nccwpck_require__(92385);
-const { run } = __nccwpck_require__(93159);
+const adapter = __nccwpck_require__(93159);
 const { robot } = __nccwpck_require__(58104);
 __nccwpck_require__(45042);
 
-run(robot);
+adapter.run(robot);
 
 })();
 

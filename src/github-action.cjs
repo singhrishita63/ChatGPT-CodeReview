@@ -1,6 +1,6 @@
 require('./fetch-polyfill.cjs');
-const { run } = require('@probot/adapter-github-actions');
+const adapter = require('@probot/adapter-github-actions');
 const { robot } = require('./bot');
 require('./log');
 
-run(robot);
+adapter.run(robot);
