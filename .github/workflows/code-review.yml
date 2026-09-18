@@ -1,6 +1,7 @@
 name: AI Code Review
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [opened, reopened, synchronize]
 
@@ -26,4 +27,4 @@ jobs:
           MAX_PATCH_LENGTH: 10000
           IGNORE_PATTERNS: /node_modules/**/*,*.md
           INCLUDE_PATTERNS: "*.js,*.ts,*.jsx,*.tsx"
-          PROMPT: "Review this code for bugs, security issues, performance problems, and code quality. Give clear and useful suggestions."
+          PROMPT: "Review this code for bugs, security issues, performance problems, and code quality."
